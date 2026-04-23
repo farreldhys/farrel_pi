@@ -31,7 +31,7 @@ if uploaded_file is not None:
     
     with col1:
         st.subheader("Original Image")
-        st.image(image, use_container_width=True)
+        st.image(image, use_column_width=True)
     
     with st.spinner("Detecting..."):
         # Run inference
@@ -43,7 +43,7 @@ if uploaded_file is not None:
             # Plot results
             im_array = r.plot()  # plot a BGR numpy array of predictions
             im = Image.fromarray(im_array[..., ::-1])  # RGB PIL image
-            st.image(im, use_container_width=True)
+            st.image(im, use_column_width=True)
             
             # Display detection summary
             boxes = r.boxes
