@@ -67,7 +67,7 @@ if uploaded_file is not None:
     
     with st.spinner("Detecting..."):
         # Run inference
-        results = model(image)
+        results = model(image, conf=0.85)
         
     with col2:
         st.subheader("Detection Results")
